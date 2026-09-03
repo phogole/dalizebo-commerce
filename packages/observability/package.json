@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/observability",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"observability package bootstrap\"",
+    "lint": "echo \"observability package bootstrap\"",
+    "typecheck": "echo \"observability package bootstrap\"",
+    "test": "echo \"observability package bootstrap\"",
+    "clean": "true"
+  }
+}

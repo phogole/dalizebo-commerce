@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigations",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Navigation",
+    "description": "Published navigation links and footer groups."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "primaryLinks": {
+      "type": "json",
+      "description": "Ordered links with labels and paths."
+    },
+    "utilityLinks": {
+      "type": "json"
+    },
+    "footerGroups": {
+      "type": "json"
+    }
+  }
+}

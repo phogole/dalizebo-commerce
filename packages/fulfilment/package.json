@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/fulfilment",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Add fulfilment tests in Sprint 3\"",
+    "clean": "rimraf dist"
+  }
+}

@@ -1,0 +1,10 @@
+name: Deploy Placeholder
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Add registry build, staging smoke tests, and production deployment here."

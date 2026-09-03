@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/logger",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"logger package bootstrap\"",
+    "lint": "echo \"logger package bootstrap\"",
+    "typecheck": "echo \"logger package bootstrap\"",
+    "test": "echo \"logger package bootstrap\"",
+    "clean": "true"
+  }
+}

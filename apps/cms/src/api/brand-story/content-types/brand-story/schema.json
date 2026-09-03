@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "brand_stories",
+  "info": {
+    "singularName": "brand-story",
+    "pluralName": "brand-stories",
+    "displayName": "Brand story",
+    "description": "Editorial story keyed to a Medusa Brand ID."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "medusaBrandId": {
+      "type": "string",
+      "required": true,
+      "description": "Stable Medusa Brand ID; Strapi does not own brand identity or commerce fields."
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "editorial.seo"
+    }
+  }
+}

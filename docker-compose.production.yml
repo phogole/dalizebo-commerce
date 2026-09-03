@@ -1,0 +1,113 @@
+services:
+  storefront:
+    image: ghcr.io/OWNER/dalizebo-storefront:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file: .env.production
+    environment:
+      API_URL: http://api:4000
+    networks: [public, internal]
+    depends_on:
+      api:
+        condition: service_started
+
+  api:
+    image: ghcr.io/OWNER/dalizebo-api:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file: .env.production
+    networks: [public, internal]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  search-worker:
+    image: ghcr.io/OWNER/dalizebo-api:${IMAGE_TAG}
+    command: ["node", "dist/scripts/search-events-consumer.js"]
+    restart: unless-stopped
+    env_file: .env.production
+    networks: [internal]
+    depends_on:
+      commerce:
+        condition: service_started
+      redis:
+        condition: service_healthy
+      meilisearch:
+        condition: service_started
+
+  commerce:
+    image: ghcr.io/OWNER/dalizebo-commerce-core:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file: .env.production
+    networks: [internal]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  cms:
+    image: ghcr.io/OWNER/dalizebo-cms:${IMAGE_TAG}
+    restart: unless-stopped
+    env_file: .env.production
+    networks: [internal]
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    env_file: .env.production
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/postgres/init:/docker-entrypoint-initdb.d:ro
+    networks: [internal]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks: [internal]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.15
+    restart: unless-stopped
+    env_file: .env.production
+    volumes:
+      - meilisearch_data:/meili_data
+    networks: [internal]
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./infrastructure/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [public, internal]
+    depends_on: [storefront, api]
+
+networks:
+  public:
+  internal:
+    internal: true
+
+volumes:
+  postgres_data:
+  redis_data:
+  meilisearch_data:
+  caddy_data:
+  caddy_config:

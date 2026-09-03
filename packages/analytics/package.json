@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"analytics package bootstrap\"",
+    "lint": "echo \"analytics package bootstrap\"",
+    "typecheck": "echo \"analytics package bootstrap\"",
+    "test": "echo \"analytics package bootstrap\"",
+    "clean": "true"
+  }
+}

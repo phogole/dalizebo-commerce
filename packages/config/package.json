@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"config package bootstrap\"",
+    "lint": "echo \"config package bootstrap\"",
+    "typecheck": "echo \"config package bootstrap\"",
+    "test": "echo \"config package bootstrap\"",
+    "clean": "true"
+  }
+}

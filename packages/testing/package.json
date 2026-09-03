@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/testing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"testing package bootstrap\"",
+    "lint": "echo \"testing package bootstrap\"",
+    "typecheck": "echo \"testing package bootstrap\"",
+    "test": "echo \"testing package bootstrap\"",
+    "clean": "true"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/admin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Admin is Phase 9; scaffold when commerce baseline is stable\"",
+    "build": "echo \"Admin is Phase 9\"",
+    "lint": "echo \"Admin is Phase 9\"",
+    "typecheck": "echo \"Admin is Phase 9\"",
+    "test": "echo \"Admin is Phase 9\"",
+    "clean": "true"
+  }
+}

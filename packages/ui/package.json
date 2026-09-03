@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"ui package bootstrap\"",
+    "lint": "echo \"ui package bootstrap\"",
+    "typecheck": "echo \"ui package bootstrap\"",
+    "test": "echo \"ui package bootstrap\"",
+    "clean": "true"
+  }
+}

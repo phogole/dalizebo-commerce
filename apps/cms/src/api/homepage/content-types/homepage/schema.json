@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": "The published storefront homepage composition."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "intro": {
+      "type": "text"
+    },
+    "sections": {
+      "type": "json",
+      "description": "Ordered editorial section configuration; product truth is referenced by Medusa IDs or handles."
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "editorial.seo"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"sdk package bootstrap\"",
+    "lint": "echo \"sdk package bootstrap\"",
+    "typecheck": "echo \"sdk package bootstrap\"",
+    "test": "echo \"sdk package bootstrap\"",
+    "clean": "true"
+  }
+}

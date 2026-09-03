@@ -1,0 +1,40 @@
+{
+  "name": "dalizebo-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "format": "prettier --write .",
+    "clean": "turbo run clean && rimraf node_modules",
+    "infra:up": "docker compose up -d postgres redis meilisearch",
+    "infra:down": "docker compose down",
+    "db:migrate": "pnpm --filter @dalizebo/commerce db:migrate",
+    "db:sync-links": "pnpm --filter @dalizebo/commerce db:sync-links",
+    "db:seed": "pnpm --filter @dalizebo/commerce db:seed",
+    "search:reindex": "pnpm --filter @dalizebo/api search:reindex",
+    "search:configure": "pnpm --filter @dalizebo/api search:configure",
+    "search:consume": "pnpm --filter @dalizebo/api search:consume",
+    "frameworks:generate": "sh scripts/bootstrap-frameworks.sh",
+    "acceptance:commerce": "node scripts/acceptance-commerce.mjs",
+    "acceptance:content": "node scripts/acceptance-content.mjs",
+    "validate:content-model": "node scripts/validate-content-model.mjs",
+    "validate:repository": "node scripts/validate-repository.mjs"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "rimraf": "^6.0.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}

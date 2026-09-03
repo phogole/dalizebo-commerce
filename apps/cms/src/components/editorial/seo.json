@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_editorial_seos",
+  "info": {
+    "displayName": "SEO metadata",
+    "description": "Editorial search metadata. Commerce pricing and availability never belong here."
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 160
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "regex": "^https?://"
+    },
+    "noIndex": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+dalizebo.co.za, www.dalizebo.co.za {
+    encode zstd gzip
+    reverse_proxy storefront:3000
+}
+
+api.dalizebo.co.za {
+    encode zstd gzip
+    reverse_proxy api:4000
+}

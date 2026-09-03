@@ -1,0 +1,13 @@
+{
+  "name": "@dalizebo/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"Mobile is Phase 10; initialize Expo after web checkout is stable\"",
+    "build": "echo \"Mobile is Phase 10\"",
+    "lint": "echo \"Mobile is Phase 10\"",
+    "typecheck": "echo \"Mobile is Phase 10\"",
+    "test": "echo \"Mobile is Phase 10\"",
+    "clean": "true"
+  }
+}
